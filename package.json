@@ -1,0 +1,24 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "Puppeteer tests",
+  "main": "index.js",
+  "author": "Przemysław Mazur",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "jest": "^28.1.2",
+    "jest-puppeteer": "^6.1.1",
+    "puppeteer": "^15.3.2"
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "verbose": true
+  },
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.6"
+  }
+}
