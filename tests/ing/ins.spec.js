@@ -15,4 +15,8 @@ describe('ING', () => {
   it('page title should be "ING Bank Śląski"', async () => {
     await expect(await page.title()).toMatch('ING Bank Śląski')
   })
+
+  it('unit tests', async () => {
+    await helper.runUnitTests(helper.unitTests)
+  })
 })

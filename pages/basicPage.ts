@@ -20,4 +20,31 @@ export default class BasicPage {
   async getElementClassName(element) {
     return this.page.$eval(element, (e) => e.className)
   }
+
+  async checkIfElementExists(
+    element,
+    options = { visible: true, timeout: 5000 },
+  ) {
+    const elem = await this.page.waitForSelector(element, options)
+    expect(elem).toBeDefined()
+  }
+
+  async runUnitTests(obj) {
+    let failedTests = []
+    for (const [elem, selector] of Object.entries(obj)) {
+      try {
+        await this.checkIfElementExists(selector, {
+          visible: true,
+          timeout: 100,
+        })
+      } catch (error) {
+        failedTests.push(elem)
+      }
+      try {
+        expect(failedTests).toBeFalsy()
+      } catch (getElementClassName) {
+        throw new Error(`Following unit tests have failed: ${failedTests}`)
+      }
+    }
+  }
 }
