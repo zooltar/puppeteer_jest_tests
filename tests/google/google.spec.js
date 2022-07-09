@@ -41,7 +41,6 @@ describe('Google', () => {
       await page.waitForNavigation({ waitUntil: 'networkidle2' }),
     ])
     await page.waitForSelector('#search')
-    await page.screenshot({ path: 'buddy-screenshot.png' })
     const searchResults = await page.$$('h1')
     const searchResultsTexts = await Promise.all(
       searchResults.map(async (elem) => {
