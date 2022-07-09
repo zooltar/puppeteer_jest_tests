@@ -1,23 +1,23 @@
 export default class BasicPage {
-    page
+  page
 
-    constructor(page) {
-        this.page = page
-    }
+  constructor(page) {
+    this.page = page
+  }
 
-    async getElementImage(element) {
-        return this.page.$eval(element, e => e.querySelector("img")["src"]);
-    }
+  async getElementImage(element) {
+    return this.page.$eval(element, (e) => e.querySelector('img')['src'])
+  }
 
-    async getElementValue(element) {
-        return this.page.$eval(element, e => e.value);
-    }
+  async getElementValue(element) {
+    return this.page.$eval(element, (e) => e.value)
+  }
 
-    async getElementInnerText(element) {
-        return this.page.$eval(element, e => e.innerText);
-    }
+  async getElementInnerText(element) {
+    return this.page.$eval(element, (e) => e.innerText)
+  }
 
-    async getElementClassName(element) {
-        return this.page.$eval(element, e => e.className);
-    }
+  async getElementClassName(element) {
+    return this.page.$eval(element, (e) => e.className)
+  }
 }

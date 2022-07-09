@@ -1,10 +1,11 @@
-import BasicPage from "../basicPage";
+import BasicPage from '../basicPage'
 
 export default class Google extends BasicPage {
-    searchButton = "[aria-label*='Google Search']";
-    feelingLuckyButton = "[aria-label*='Feeling Lucky']";
+  searchField = "[aria-label='Search']"
+  searchButton = "[aria-label*='Google Search']"
+  feelingLuckyButton = "[aria-label*='Feeling Lucky']"
 
-    constructor(page) {
-        super(page);
-    }
+  constructor(page) {
+    super(page)
+  }
 }
