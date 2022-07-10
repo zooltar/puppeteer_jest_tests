@@ -42,7 +42,7 @@ export default class BasicPage {
       }
       try {
         expect(failedTests).toEqual(expect.arrayContaining([]))
-      } catch (getElementClassName) {
+      } catch (e) {
         throw new Error(`Following unit tests have failed: ${failedTests}`)
       }
     }
